@@ -41,7 +41,8 @@ Object.isFrozen = () => 1;
       case "title":
         break;
       case "src":
-        b.slice(-3) == "600" && (b = b.slice(0, -3) + "200")
+        setAttr.call(this, a, b.endsWith("600") ? b.slice(0, -3) + "200" : b);
+        break;
       default:
         setAttr.call(this, a, b);
     }
