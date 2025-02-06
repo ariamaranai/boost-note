@@ -23,7 +23,7 @@ Object.isFrozen = () => 1;
   p.send = function (a) {
     this.readyState && send.call(this, a)
   }
-
+  let blockElement;
   let setAttr = (p = Element.prototype).setAttribute;
   p.setAttribute = function (a, b) {
     switch (a) {
@@ -40,11 +40,17 @@ Object.isFrozen = () => 1;
       case "loading":
       case "title":
         break;
+      case "id":
+        console.log(b);
+        b != "gtag-script" ? this.id = b : blockElement = this;
+        break;
       case "src":
-        setAttr.call(this, a, b.endsWith("600") ? b.slice(0, -3) + "200" : b);
+          setAttr.call(this, a, b.endsWith("600") ? b.slice(0, -3) + "200" : b);
         break;
       default:
         setAttr.call(this, a, b);
     }
   }
+  HTMLBodyElement.prototype.appendChild = a =>
+    a != blockElement && a.tagName != "IFRAME" ? document.body.insertBefore(a, null) : a
 }
