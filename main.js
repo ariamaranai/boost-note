@@ -28,29 +28,44 @@ Object.isFrozen = () => 1;
   p.setAttribute = function (a, b) {
     switch (a) {
       case "alt":
+      case "aria-activedescendant":
       case "aria-controls":
       case "aria-disabled":
       case "aria-expanded":
       case "aria-haspopup":
       case "aria-hidden":
       case "aria-label":
+      case "aria-labelledby":
+      case "aria-activedescendant":
       case "aria-pressed":
       case "data-tooltip":
       case "decoding":
       case "loading":
+      case "tabindex":
       case "title":
         break;
       case "id":
-        console.log(b);
         b != "gtag-script" ? this.id = b : blockElement = this;
         break;
-      case "src":
-          setAttr.call(this, a, b.endsWith("600") ? b.slice(0, -3) + "200" : b);
+      case "src": {
+        let end = b.slice(-9);
+        end != "gnup2.png" && end != "gnup1.png"
+          ? setAttr.call(this, a, end == "width=600" ? b.slice(0, -3) + "200" : b)
+          : blockElement = this;
         break;
+      }
       default:
         setAttr.call(this, a, b);
     }
   }
-  HTMLBodyElement.prototype.appendChild = a =>
-    a != blockElement && a.tagName != "IFRAME" ? document.body.insertBefore(a, null) : a
+  let setter = { set: () => "" };
+  Object.defineProperties(HTMLLinkElement.prototype, {
+    charset: setter,
+    rel: setter,
+    as: setter,
+    href: { set: function () { blockElement = this } }
+  });
+  Node.prototype.appendChild = function (a) {
+    return a != blockElement ? this.insertBefore(a, null) : a
+  }
 }
