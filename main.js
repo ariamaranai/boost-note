@@ -1,6 +1,9 @@
-Object.freeze = a => a;
-Object.isFrozen = () => 1;
 {
+  let o = Object;
+  o.freeze = a => a;
+  o.isFrozen = () => 1;
+  Math.random = () => 0;
+
   let fet = fetch;
   let dummyThen = {
     then: ()=> dummyThen,
@@ -17,6 +20,7 @@ Object.isFrozen = () => 1;
     b != "https://note.com/api/v3/trackings/fp" &&
     b != "https://note.com/api/v2/stats/reading_rate" &&
     b != "https://note.com/api/v2/stats/read_history" &&
+    b != "https://note.com/api/v3/points/campaigns/status" &&
       open.call(this, a, b, c);
   }
   let send = p.send;
@@ -59,7 +63,7 @@ Object.isFrozen = () => 1;
     }
   }
   let setter = { set: () => "" };
-  Object.defineProperties(HTMLLinkElement.prototype, {
+  o.defineProperties(HTMLLinkElement.prototype, {
     charset: setter,
     rel: setter,
     as: setter,
