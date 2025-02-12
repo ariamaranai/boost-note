@@ -1,7 +1,8 @@
 {
   let o = Object;
   o.freeze = a => a;
-  o.isFrozen = () => 1;
+  o.isFrozen =
+  o.hasOwnProperty = () => 1;
   Math.random = () => 0;
 
   let fet = fetch;
