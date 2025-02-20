@@ -64,6 +64,33 @@
         setAttr.call(this, a, b);
     }
   }
+  let hasOwnPropety = (p = o.prototype).hasOwnProperty;
+  p.hasOwnProperty = function (a) {
+    switch (a) {
+      case "alt":
+      case "aria-current-value":
+      case "aria-hidden":
+      case "aria-label":
+      case "ariaCurrentValue":
+      case "ariaHidden":
+      case "ariaLabel":
+      case "bg-transparent":
+      case "bgTransparent":
+      case "datetime":
+      case "devicePixelRatio":
+      case "disabled":
+      case "draggable":
+      case "like-animation":
+      case "like-click-log-model":
+      case "likeAnimation":
+      case "underline-style":
+      case "underlineStyle":
+        return 0;
+      default:
+        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        return hasOwnPropety.call(this, a);
+    }
+  };
   let setter = { set: () => "" };
   o.defineProperties(HTMLLinkElement.prototype, {
     charset: setter,
