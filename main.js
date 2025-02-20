@@ -1,7 +1,6 @@
 {
   let o = Object;
 
-  __SENTRY__ = o.freeze({});
   o.freeze = a => a;
   o.isFrozen =
   o.hasOwnProperty = () => 1;
