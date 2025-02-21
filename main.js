@@ -64,6 +64,7 @@
         setAttr.call(this, a, b);
     }
   }
+  var kkk = {};
   let hasOwnPropety = (p = o.prototype).hasOwnProperty;
   p.hasOwnProperty = function (a) {
     switch (a) {
@@ -80,6 +81,9 @@
       case "devicePixelRatio":
       case "disabled":
       case "draggable":
+      case "is-hovered":
+      case "is-liked":
+      case "isHovered":
       case "like-animation":
       case "like-click-log-model":
       case "likeAnimation":
@@ -87,10 +91,10 @@
       case "underlineStyle":
         return 0;
       default:
-        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
         return hasOwnPropety.call(this, a);
     }
-  };
+  }
   let setter = { set: () => "" };
   o.defineProperties(HTMLLinkElement.prototype, {
     charset: setter,
