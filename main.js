@@ -64,14 +64,21 @@
         setAttr.call(this, a, b);
     }
   }
-  var kkk = {};
   let hasOwnPropety = (p = o.prototype).hasOwnProperty;
   p.hasOwnProperty = function (a) {
     switch (a) {
       case "alt":
+      case "altKey":
+      case "aria-controls":
       case "aria-current-value":
+      case "aria-describedby":
+      case "aria-disabled":
+      case "aria-expanded":
+      case "aria-haspopup":
       case "aria-hidden":
       case "aria-label":
+      case "aria-labelledby":
+      case "aria-pressed":
       case "ariaCurrentValue":
       case "ariaHidden":
       case "ariaLabel":
@@ -83,15 +90,21 @@
       case "draggable":
       case "is-hovered":
       case "is-liked":
+      case "isMobile":
       case "isHovered":
       case "like-animation":
       case "like-click-log-model":
       case "likeAnimation":
+      case "loading":
+      case "tabIndex":
+      case "tiltX":
+      case "tiltY":
       case "underline-style":
       case "underlineStyle":
+      case "xmlns":
         return 0;
       default:
-        typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
         return hasOwnPropety.call(this, a);
     }
   }
