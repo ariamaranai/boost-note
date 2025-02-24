@@ -64,8 +64,8 @@
         setAttr.call(this, a, b);
     }
   }
-  let hasOwnPropety = (p = o.prototype).hasOwnProperty;
-  p.hasOwnProperty = function (a) {
+  // var kkk = {};
+  o.prototype.hasOwnProperty = function (a) {
     switch (a) {
       case "alt":
       case "altKey":
@@ -92,10 +92,36 @@
       case "is-liked":
       case "isMobile":
       case "isHovered":
+      case "label":
+      case "label-font-bold":
+      case "label-font-size":
+      case "label-text":
+      case "labelFontBold":
+      case "labelFontSize":
+      case "labelText":
       case "like-animation":
       case "like-click-log-model":
       case "likeAnimation":
       case "loading":
+      case "placeholder":
+      case "placeholderTag":
+      case "share-booster-modal":
+      case "share-booster-pc":
+      case "share-button-exp-group-name":
+      case "share-target":
+      case "share-target-type":
+      case "share-tracking-contents":
+      case "share-url":
+      case "shareAnimationTimer":
+      case "shareBoosterModal":
+      case "shareBoosterPc":
+      case "shareButtonExpGroupName":
+      case "shareClickTrackingParam":
+      case "shareMenuDesktopPosition":
+      case "shareTarget":
+      case "shareTargetType":
+      case "shareTrackingContents":
+      case "shareUrl":
       case "tabIndex":
       case "tiltX":
       case "tiltY":
@@ -105,7 +131,7 @@
         return 0;
       default:
         // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
-        return hasOwnPropety.call(this, a);
+        return o.hasOwn(this, a);
     }
   }
   let setter = { set: () => "" };
