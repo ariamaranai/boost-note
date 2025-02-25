@@ -1,4 +1,5 @@
-.t-timeline-new__nav::-webkit-scrollbar,
-footer {
-  display: none
+.o-supportAppealBox,
+.o-footer,
+.t-timeline-new__nav::-webkit-scrollbar {
+  display: none !important
 }
