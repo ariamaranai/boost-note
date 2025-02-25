@@ -1,5 +1,6 @@
 .o-supportAppealBox,
 .o-footer,
+.p-article__paywall,
 .t-timeline-new__nav::-webkit-scrollbar {
   display: none !important
 }

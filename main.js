@@ -108,6 +108,7 @@
       case "loading":
       case "placeholder":
       case "placeholderTag":
+      case "rel":
       case "share-booster-modal":
       case "share-booster-pc":
       case "share-button-exp-group-name":
