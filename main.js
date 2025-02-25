@@ -4,7 +4,10 @@
   o.freeze = a => a;
   o.isFrozen =
   o.hasOwnProperty = () => 1;
-  Math.random = () => 0;
+  
+  // Blueskyの埋め込み
+  let n = 0;
+  Math.random = () => n += .000000001;
 
   let fet = fetch;
   let dummyThen = {
@@ -51,7 +54,7 @@
       case "title":
         break;
       case "id":
-        b != "gtag-script" ? this.id = b : blockElement = this;
+       b != "gtag-script" ? this.id = b : blockElement = this;
         break;
       case "src": {
         let end = b.slice(-9);
@@ -64,7 +67,7 @@
         setAttr.call(this, a, b);
     }
   }
-  // var kkk = {};
+  var kkk = {};
   o.prototype.hasOwnProperty = function (a) {
     switch (a) {
       case "alt":
@@ -84,7 +87,7 @@
       case "ariaLabel":
       case "bg-transparent":
       case "bgTransparent":
-      case "datetime":
+      // case "datetime":
       case "devicePixelRatio":
       case "disabled":
       case "draggable":
@@ -95,7 +98,7 @@
       case "label":
       case "label-font-bold":
       case "label-font-size":
-      case "label-text":
+      // case "label-text":
       case "labelFontBold":
       case "labelFontSize":
       case "labelText":
@@ -128,9 +131,11 @@
       case "underline-style":
       case "underlineStyle":
       case "xmlns":
+      case "_Ctor":
+      case "__ob__":
         return 0;
       default:
-        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
         return o.hasOwn(this, a);
     }
   }
