@@ -67,7 +67,7 @@
         setAttr.call(this, a, b);
     }
   }
-  var kkk = {};
+  // var kkk = {};
   o.prototype.hasOwnProperty = function (a) {
     switch (a) {
       case "alt":
@@ -93,6 +93,7 @@
       case "draggable":
       case "is-hovered":
       case "is-liked":
+      case "isLiked":
       case "isMobile":
       case "isHovered":
       case "label":
@@ -131,12 +132,13 @@
       case "tiltY":
       case "underline-style":
       case "underlineStyle":
+      case "warning":
       case "xmlns":
       case "_Ctor":
       case "__ob__":
         return 0;
       default:
-        typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        // ypeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
         return o.hasOwn(this, a);
     }
   }
