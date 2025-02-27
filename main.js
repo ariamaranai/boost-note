@@ -52,16 +52,14 @@
       case "loading":
       case "tabindex":
       case "title":
-        break;
+        return 0;
       case "id":
-       b != "gtag-script" ? this.id = b : blockElement = this;
-        break;
+       return b != "gtag-script" ? this.id = b : blockElement = this;
       case "src": {
         let end = b.slice(-9);
-        end != "gnup2.png" && end != "gnup1.png"
+        return end != "gnup2.png" && end != "gnup1.png"
           ? setAttr.call(this, a, end == "width=600" ? b.slice(0, -3) + "200" : b)
           : blockElement = this;
-        break;
       }
       default:
         setAttr.call(this, a, b);
