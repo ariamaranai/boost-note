@@ -4,6 +4,7 @@
   o.freeze = a => a;
   o.isFrozen =
   o.hasOwnProperty = () => 1;
+  Number.isSafeInteger = ()=> (console.log(2),1)
   
   // Blueskyの埋め込み
   let n = 0;
@@ -68,8 +69,10 @@
   // var kkk = {};
   o.prototype.hasOwnProperty = function (a) {
     switch (a) {
+      case "Accept":
       case "alt":
       case "altKey":
+      case "animate":
       case "aria-controls":
       case "aria-current-value":
       case "aria-describedby":
@@ -136,7 +139,7 @@
       case "__ob__":
         return 0;
       default:
-        // ypeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
+        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
         return o.hasOwn(this, a);
     }
   }
