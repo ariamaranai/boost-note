@@ -89,6 +89,7 @@
       case "bg-transparent":
       case "bgTransparent":
       // case "datetime":
+      case "color":
       case "devicePixelRatio":
       case "disabled":
       case "draggable":
