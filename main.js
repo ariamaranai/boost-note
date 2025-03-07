@@ -1,12 +1,10 @@
 {
   let o = Object;
-
   o.freeze = a => a;
   o.isFrozen =
   o.hasOwnProperty = () => 1;
-  Number.isSafeInteger = ()=> (console.log(2),1)
-  
-  // Blueskyの埋め込み
+
+  // embed bluesky
   let n = 0;
   Math.random = () => n += .000000001;
 
@@ -144,11 +142,10 @@
         return o.hasOwn(this, a);
     }
   }
-  let setter = { set: () => "" };
   o.defineProperties(HTMLLinkElement.prototype, {
-    charset: setter,
-    rel: setter,
-    as: setter,
+    charset: { set: () => "" },
+    rel: { set: () => "" },
+    as: { set: () => "" },
     href: { set: function () { blockElement = this } }
   });
   Node.prototype.appendChild = function (a) {
