@@ -139,7 +139,7 @@
         return 0;
       default:
         // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
-        return o.hasOwn(this, a);
+        return a in this;
     }
   }
   o.defineProperties(HTMLLinkElement.prototype, {
