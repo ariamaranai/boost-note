@@ -65,8 +65,8 @@
     }
   }
   // var kkk = {};
-  o.prototype.hasOwnProperty = function (a) {
-    switch (a) {
+  o.prototype.hasOwnProperty.call = (a, b) => {
+    switch (b) {
       case "Accept":
       case "alt":
       case "altKey":
@@ -138,8 +138,8 @@
       case "__ob__":
         return 0;
       default:
-        // typeof a == "string" && a.length > 2 && (kkk[a] ? ++kkk[a] : kkk[a] = 1);
-        return a in this;
+        // typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
+        return b in a;
     }
   }
   o.defineProperties(HTMLLinkElement.prototype, {
