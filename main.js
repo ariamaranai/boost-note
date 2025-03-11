@@ -64,7 +64,7 @@
         setAttr.call(this, a, b);
     }
   }
-  var kkk = {};
+  // var kkk = {};
   o.prototype.hasOwnProperty.call = (a, b) => {
     switch (b) {
       case "Accept":
@@ -139,8 +139,11 @@
       case "_Ctor":
       case "__ob__":
         return 0;
+      case "no-prefetch":
+      case "noPrefetch":
+        return 1;
       default:
-        typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
+        // typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
         return b in a;
     }
   }
