@@ -64,7 +64,7 @@
         setAttr.call(this, a, b);
     }
   }
-  // var kkk = {};
+  var kkk = {};
   o.prototype.hasOwnProperty.call = (a, b) => {
     switch (b) {
       case "Accept":
@@ -91,6 +91,7 @@
       case "devicePixelRatio":
       case "disabled":
       case "draggable":
+      case "imageAlt":
       case "is-hovered":
       case "is-liked":
       case "isLiked":
@@ -109,6 +110,7 @@
       case "loading":
       case "placeholder":
       case "placeholderTag":
+      case "prefetch":
       case "rel":
       case "share-booster-modal":
       case "share-booster-pc":
@@ -138,7 +140,7 @@
       case "__ob__":
         return 0;
       default:
-        // typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
+        typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
         return b in a;
     }
   }
