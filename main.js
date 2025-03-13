@@ -91,12 +91,19 @@
       case "devicePixelRatio":
       case "disabled":
       case "draggable":
+      case "facebook":
+      case "facebook_share_url":
       case "imageAlt":
       case "is-hovered":
       case "is-liked":
+      case "is-show-rss":
+      case "isBoldWarning":
+      case "isHovered":
       case "isLiked":
       case "isMobile":
-      case "isHovered":
+      case "isShareAnimationPause":
+      case "isShareThanksVisible":
+      case "isShowRss":
       case "label":
       case "label-font-bold":
       case "label-font-size":
