@@ -97,6 +97,7 @@
       case "is-hovered":
       case "is-liked":
       case "is-show-rss":
+      case "isAnimating":
       case "isBoldWarning":
       case "isHovered":
       case "isLiked":
@@ -119,6 +120,7 @@
       case "placeholderTag":
       case "prefetch":
       case "rel":
+      case "rss":
       case "share-booster-modal":
       case "share-booster-pc":
       case "share-button-exp-group-name":
@@ -136,6 +138,7 @@
       case "shareTargetType":
       case "shareTrackingContents":
       case "shareUrl":
+      case "sponsor":
       case "tabIndex":
       case "tiltX":
       case "tiltY":
