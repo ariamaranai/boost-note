@@ -68,6 +68,9 @@
   o.prototype.hasOwnProperty.call = (a, b) => {
     switch (b) {
       case "Accept":
+      case "ShareBoosterModal":
+      case "ShareBoosterPc":
+      case "SideShareBoosterPc":
       case "alt":
       case "altKey":
       case "animate":
@@ -129,8 +132,6 @@
       case "share-tracking-contents":
       case "share-url":
       case "shareAnimationTimer":
-      case "shareBoosterModal":
-      case "shareBoosterPc":
       case "shareButtonExpGroupName":
       case "shareClickTrackingParam":
       case "shareMenuDesktopPosition":
@@ -142,6 +143,10 @@
       case "tabIndex":
       case "tiltX":
       case "tiltY":
+      case "twitter-followee-suggestion-modal":
+      case "twitter-signup-modal":
+      case "twitterFolloweeSuggestionModal":
+      case "twitterSignupModal":
       case "underline-style":
       case "underlineStyle":
       case "warning":
