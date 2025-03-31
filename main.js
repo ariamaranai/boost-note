@@ -47,7 +47,6 @@
       case "aria-activedescendant":
       case "aria-pressed":
       case "data-tooltip":
-      case "decoding":
       case "loading":
       case "tabindex":
       case "title":
@@ -87,6 +86,8 @@
       case "ariaCurrentValue":
       case "ariaHidden":
       case "ariaLabel":
+      case "backdrop-transition":
+      case "backdropTransition":
       case "bg-transparent":
       case "bgTransparent":
       // case "datetime":
