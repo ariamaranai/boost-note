@@ -60,7 +60,7 @@
           : blockElement = this;
       }
       default:
-        setAttr.call(this, a, b);
+        return setAttr.call(this, a, b);
     }
   }
   // var kkk = {};
