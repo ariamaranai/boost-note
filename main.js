@@ -16,7 +16,7 @@
   fetch = (a, b) =>
     a != "https://note.com/api/v3/trackings/fp" &&
     a != "https://logcollector.note.com/log_tracking_pb.firehose" ?
-      fet(a, b) : dummyThen;
+    fet(a, b) : dummyThen;
  
   let p = XMLHttpRequest.prototype;
   let open = p.open;
@@ -25,12 +25,11 @@
     b != "https://note.com/api/v2/stats/reading_rate" &&
     b != "https://note.com/api/v2/stats/read_history" &&
     b != "https://note.com/api/v3/points/campaigns/status" &&
-      open.call(this, a, b, c);
+    open.call(this, a, b, c);
   }
   let send = p.send;
-  p.send = function (a) {
-    this.readyState && send.call(this, a)
-  }
+  p.send = function (a) {send.call(this, a) }
+  
   let blockElement;
   let setAttr = (p = Element.prototype).setAttribute;
   p.setAttribute = function (a, b) {
