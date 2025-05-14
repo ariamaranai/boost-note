@@ -17,7 +17,7 @@
     a != "https://note.com/api/v3/trackings/fp" &&
     a != "https://logcollector.note.com/log_tracking_pb.firehose" ?
     fet(a, b) : dummyThen;
- 
+
   let p = XMLHttpRequest.prototype;
   let open = p.open;
   p.open = function (a, b, c) {
@@ -27,9 +27,7 @@
     b != "https://note.com/api/v3/points/campaigns/status" &&
     open.call(this, a, b, c);
   }
-  let send = p.send;
-  p.send = function (a) {send.call(this, a) }
-  
+
   let blockElement;
   let setAttr = (p = Element.prototype).setAttribute;
   p.setAttribute = function (a, b) {
@@ -37,13 +35,14 @@
       case "alt":
       case "aria-activedescendant":
       case "aria-controls":
+      case "aria-current":
       case "aria-disabled":
       case "aria-expanded":
       case "aria-haspopup":
       case "aria-hidden":
       case "aria-label":
       case "aria-labelledby":
-      case "aria-activedescendant":
+      case "aria-live":
       case "aria-pressed":
       case "data-tooltip":
       case "loading":
@@ -58,11 +57,13 @@
           ? setAttr.call(this, a, end == "width=600" ? b.slice(0, -3) + "200" : b)
           : blockElement = this;
       }
+      case "class":
+        return this.className = b;
       default:
         return setAttr.call(this, a, b);
     }
   }
-  // var kkk = {};
+  // var z = {};
   o.prototype.hasOwnProperty.call = (a, b) => {
     switch (b) {
       case "Accept":
@@ -158,7 +159,7 @@
       case "noPrefetch":
         return 1;
       default:
-        // typeof b == "string" && b.length > 2 && (kkk[b] ? ++kkk[b] : kkk[b] = 1);
+        // typeof b == "string" && b.length > 2 && (z[b] ? ++z[b] : z[b] = 1);
         return b in a;
     }
   }
