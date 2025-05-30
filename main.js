@@ -118,7 +118,13 @@
       case "labelText":
       case "like-animation":
       case "like-click-log-model":
+      case "like-thanks":
+      case "like-thanks-tail-position":
+      case "like-thanks-type":
       case "likeAnimation":
+      case "likeThanks":
+      case "likeThanksTailPosition":
+      case "likeThanksType":
       case "loading":
       case "placeholder":
       case "placeholderTag":
@@ -140,6 +146,7 @@
       case "shareTargetType":
       case "shareTrackingContents":
       case "shareUrl":
+      case "showLikeThanks":
       case "sponsor":
       case "tabIndex":
       case "tiltX":
